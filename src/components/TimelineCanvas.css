@@ -1,0 +1,252 @@
+.osa-kontejner {
+  width: 100%;
+  max-height: 75vh;
+  overflow-x: scroll;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.timeline-canvas__ruler {
+  position: relative;
+  height: 28px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+.timeline-canvas__tick {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #555;
+}
+
+.timeline-canvas__gridline {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+}
+
+.radek-statu {
+  margin-bottom: 140px;
+  position: relative;
+}
+
+.radek-statu--active .nazev-statu {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+.nazev-statu {
+  position: sticky;
+  left: 0;
+  background-color: white;
+  padding: 10px 20px 10px 0;
+  margin: 0 0 60px;
+  z-index: 10;
+  color: #333;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.nazev-statu:hover {
+  color: #7c3aed;
+  border-bottom-color: #7c3aed;
+}
+
+.dlouha-cara {
+  position: relative;
+  height: 56px;
+  background: transparent;
+  cursor: crosshair;
+}
+
+.dlouha-cara::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 4px;
+  margin-top: -2px;
+  background-color: #ccc;
+  pointer-events: none;
+}
+
+.obdobi {
+  position: absolute;
+  height: 16px;
+  top: calc(50% - 8px);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0.85;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+  appearance: none;
+}
+
+.obdobi:hover {
+  opacity: 1;
+  outline: 2px solid #2563eb;
+  z-index: 6;
+}
+
+.popisek {
+  position: absolute;
+  width: max-content;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: bold;
+  color: #111;
+  pointer-events: none;
+}
+
+.popisek.nahoru {
+  bottom: 25px;
+}
+
+.popisek.dolu {
+  top: 25px;
+}
+
+.rok-stitek {
+  position: absolute;
+  font-size: 11px;
+  color: #555;
+  pointer-events: none;
+}
+
+.rok-od-stitek {
+  left: 0;
+}
+
+.rok-do-stitek {
+  right: 0;
+}
+
+.rok-stitek--center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.text-nahoru .rok-stitek {
+  top: 22px;
+}
+
+.text-dolu .rok-stitek {
+  bottom: 22px;
+}
+
+.bez-leveho .rok-od-stitek {
+  display: none;
+}
+
+.bez-praveho .rok-do-stitek {
+  display: none;
+}
+
+.udalost-bod {
+  position: absolute;
+  width: 2px;
+  min-width: 2px;
+  height: 45px;
+  background-color: #444;
+  z-index: 5;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+.udalost-bod:hover {
+  background-color: #2563eb;
+  z-index: 8;
+}
+
+.udalost-bod.nahoru {
+  bottom: 50%;
+}
+
+.udalost-bod.dolu {
+  top: 50%;
+}
+
+.udalost-bod::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #111;
+  border-radius: 50%;
+  left: -3px;
+}
+
+.udalost-bod.nahoru::after {
+  bottom: -4px;
+}
+
+.udalost-bod.dolu::after {
+  top: -4px;
+}
+
+.udalost-bod:hover::after {
+  background-color: #2563eb;
+}
+
+.popisek-bodu {
+  position: absolute;
+  width: max-content;
+  max-width: 140px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  line-height: 1.3;
+  color: #222;
+  pointer-events: none;
+}
+
+.udalost-bod.nahoru .popisek-bodu {
+  bottom: 100%;
+  padding-bottom: 5px;
+}
+
+.udalost-bod.dolu .popisek-bodu {
+  top: 100%;
+  padding-top: 5px;
+}
+
+.popisek-bodu .roky {
+  font-weight: bold;
+  color: #dc3545;
+  font-size: 13px;
+}
+
+.timeline-canvas__empty {
+  text-align: center;
+  padding: 80px 24px;
+  color: #666;
+}
+
+.timeline-canvas__hint {
+  font-size: 14px;
+  color: #999;
+  margin-top: 8px;
+}
